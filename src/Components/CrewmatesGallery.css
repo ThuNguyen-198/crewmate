@@ -1,0 +1,19 @@
+.gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery {
+  width: 60%;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.card-link {
+  text-decoration: none;
+  color: #333;
+}
