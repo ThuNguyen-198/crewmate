@@ -8,7 +8,6 @@ import plain from "../assets/crewmates-color/default.jpeg";
 import "./CrewmatesGallery.css";
 import { useEffect } from "react";
 import { supabase } from "../client";
-import { Link } from "react-router-dom";
 
 function CrewmatesGallery() {
   const [crewmateList, setCrewmateList] = useState([]);
@@ -29,27 +28,22 @@ function CrewmatesGallery() {
       <div className="gallery">
         {crewmateList &&
           crewmateList.map((crewmate, index) => (
-            <Link
-              className="card-link"
-              to={`/crewmates-gallery/${crewmate.id}`}
-            >
-              <GalleryCard
-                imageURL={
-                  crewmate.color === "pink"
-                    ? pink
-                    : crewmate.color === "green"
-                    ? green
-                    : crewmate.color === "red"
-                    ? red
-                    : plain
-                }
-                name={crewmate.name}
-                speed={crewmate.speed}
-                color={crewmate.color}
-                id={crewmate.id}
-                key={index}
-              />
-            </Link>
+            <GalleryCard
+              imageURL={
+                crewmate.color === "pink"
+                  ? pink
+                  : crewmate.color === "green"
+                  ? green
+                  : crewmate.color === "red"
+                  ? red
+                  : plain
+              }
+              name={crewmate.name}
+              speed={crewmate.speed}
+              color={crewmate.color}
+              id={crewmate.id}
+              key={index}
+            />
           ))}
       </div>
     </div>

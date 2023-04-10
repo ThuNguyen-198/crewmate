@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import pink from "../assets/crewmates-color/pink.png";
 import "./GalleryCard.css";
 import { supabase } from "../client";
+import { Link } from "react-router-dom";
 
 function GalleryCard({ imageURL, name, speed, color, id }) {
   const [displayOptions, setDisplayOptions] = useState(false);
@@ -31,7 +32,9 @@ function GalleryCard({ imageURL, name, speed, color, id }) {
       <p>Name of Crewmate: {name}</p>
       <p>Speed of Crewmate: {speed}</p>
       <p>Color of Crewmate: {color}</p>
-      <div className="edit-btn">Edit Crewmate</div>
+      <Link className="card-link" to={`/crewmates-gallery/${id}`}>
+        <div className="edit-btn">Edit Crewmate</div>
+      </Link>
     </div>
   );
 }
